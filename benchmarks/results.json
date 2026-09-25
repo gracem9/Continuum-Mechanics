@@ -1,0 +1,75 @@
+{
+  "environment": {
+    "cpu": "Apple M1 Pro",
+    "logical_cores": 10,
+    "os": "Darwin 23.5.0 (arm64)",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "cpp_build": {
+      "compiler": "AppleClang 16.0.0.16000026",
+      "build_type": "Release",
+      "cxx_flags": "-O3 -DNDEBUG -std=c++17 -ffp-contract=off",
+      "fft": "pocketfft (vendored, commit c90e55b), single-threaded, real-to-complex"
+    }
+  },
+  "kernel": [
+    {
+      "N": 128,
+      "calls_per_repeat": 400,
+      "repeats": 9,
+      "compute_py_ms": 1.3475871876289602,
+      "compute_cpp_ms": 0.5190189575660042,
+      "compute_speedup": 2.5964122658421123,
+      "greens_py_ms": 0.1354842699947767,
+      "greens_cpp_ms": 0.027535312401596457,
+      "greens_speedup": 4.92038252621828
+    },
+    {
+      "N": 256,
+      "calls_per_repeat": 100,
+      "repeats": 9,
+      "compute_py_ms": 7.358977500116453,
+      "compute_cpp_ms": 2.481753340107389,
+      "compute_speedup": 2.965233241027096,
+      "greens_py_ms": 0.6527041696244851,
+      "greens_cpp_ms": 0.11544167005922645,
+      "greens_speedup": 5.653973727940875
+    },
+    {
+      "N": 512,
+      "calls_per_repeat": 25,
+      "repeats": 9,
+      "compute_py_ms": 39.33632835978642,
+      "compute_cpp_ms": 12.925694999285042,
+      "compute_speedup": 3.0432660187295326,
+      "greens_py_ms": 4.08839664189145,
+      "greens_cpp_ms": 1.0111416410654783,
+      "greens_speedup": 4.043347119581932
+    },
+    {
+      "N": 1024,
+      "calls_per_repeat": 6,
+      "repeats": 9,
+      "compute_py_ms": 192.47212499612942,
+      "compute_cpp_ms": 56.20147217026291,
+      "compute_speedup": 3.424681197194145,
+      "greens_py_ms": 18.04591666829462,
+      "greens_cpp_ms": 4.510687499229486,
+      "greens_speedup": 4.0007020374116395
+    }
+  ],
+  "nb03_end_to_end": {
+    "sweeps": 50,
+    "energy_evaluations": 28800,
+    "seconds": {
+      "original": 151.50607020797906,
+      "python": 73.53360758302733,
+      "cpp": 47.5507795419544
+    },
+    "same_final_positions": true,
+    "speedup_mask_fix_only": 2.060364983955295,
+    "speedup_total": 3.186195298319014,
+    "speedup_from_cpp_given_mask_fix": 1.5464227567110251
+  }
+}

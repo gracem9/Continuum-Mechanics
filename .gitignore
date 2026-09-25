@@ -6,3 +6,9 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 *.log
+
+# C++ build (CMake / scikit-build-core)
+build/
+*.so
+*.egg-info/
+.pytest_cache/
