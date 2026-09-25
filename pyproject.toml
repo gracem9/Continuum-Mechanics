@@ -1,0 +1,20 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11>=2.12"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "continuum-mechanics"
+version = "0.1.0"
+description = "C++ kernels (pybind11 + CMake) for the Fourier-space elasticity solver in src/elasticity_utils.py"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy"]
+
+[tool.scikit-build]
+cmake.build-type = "Release"
+# Keep the CMake build tree between installs, so re-running pip only
+# recompiles what changed.
+build-dir = "build/{wheel_tag}"
+# Only the compiled module is installed. src/elasticity_utils.py is not copied
+# into site-packages: the notebooks import it from ../src, and a copy there
+# would go stale and shadow edits.
+wheel.packages = []
